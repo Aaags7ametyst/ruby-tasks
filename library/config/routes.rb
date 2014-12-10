@@ -1,7 +1,15 @@
-Rails.application.routes.draw do
-  resources :books
+Library::Application.routes.draw do
+#  get 'entries/index'
 
+#  get 'entries/new'
+
+#  get 'entries/create'
+  resources :books
   resources :authors
+  resources :entries, only: [:index, :new, :create]
+
+  root "entries#index" 
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
